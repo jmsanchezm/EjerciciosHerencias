@@ -4,11 +4,11 @@ public class Hora {
 	/**
 	 * Se guardara una cantidad de horas
 	 */
-	int hora=0;
+	protected int hora = 0;
 	/**
 	 * Se guardara una cantidad de minutos
 	 */
-	int minuto=0;
+	protected int minuto = 0;
 
 	/**
 	 * Constructor con parámetros
@@ -18,8 +18,11 @@ public class Hora {
 	 */
 	public Hora(int hora, int minuto) {
 		super();
-		this.hora = hora;
-		this.minuto = minuto;
+		if (hora >= 0 && hora <= 23) {
+			this.hora = hora;
+		}
+		if (minuto >= 0 && minuto <= 59)
+			this.minuto = minuto;
 	}
 
 	/**
@@ -27,9 +30,12 @@ public class Hora {
 	 */
 	void inc() {
 		minuto++;
-		if (minuto==60) {
+		if (minuto == 60) {
 			hora++;
-			minuto=0;
+			minuto = 0;
+			if (hora >= 24) {
+				hora = 0;
+			}
 		}
 	}
 
@@ -42,6 +48,7 @@ public class Hora {
 	boolean setMinutos(int valor) {
 		boolean result = false;
 		if (valor >= 0 && valor < 60) {
+			minuto = valor;
 			result = true;
 		}
 		return result;
@@ -56,6 +63,7 @@ public class Hora {
 	boolean setHora(int valor) {
 		boolean result = false;
 		if (valor >= 0 && valor < 24) {
+			hora = valor;
 			result = true;
 		}
 		return result;
@@ -66,19 +74,15 @@ public class Hora {
 	 */
 	public String toString() {
 		String result = "";
-
-		if (hora <= 9 && minuto >= 10) {
-			result = "0" + hora + ":" + minuto;
-
-		} else if (minuto < 10 && hora > 10) {
-			result = hora + ":" + "0" + minuto;
-
-		} else if (minuto < 10 && hora < 10) {
-			result = "0" + hora + ":" + "0" + minuto;
-
-		} else {
-			result = hora + ":" + minuto;
+		if (hora < 10) {
+			result += "0";
 		}
+		result += hora + ":";
+
+		if (minuto < 10) {
+			result += "0";
+		}
+		result += minuto+":";
 
 		return result;
 
