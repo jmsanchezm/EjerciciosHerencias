@@ -52,19 +52,22 @@ public class Perecedero extends Productos {
 	public void setDiasCaduca(int diasCaduca) {
 		this.diasCaduca = diasCaduca;
 	}
+	
 	@Override
 	public double calcular(int cantidad) {
-		super.calcular(cantidad);
+		double result=0;
 		
 		if (diasCaduca==1) {
-			precio=precio/4;
+			result=precio/4;
 		}else if (diasCaduca==2) {
-			precio=precio/3;
+			result=precio/3;
 		}else if (diasCaduca==3) {
-			precio= precio/2;
+			result= precio/2;
+		}else {
+			result=result;
 		}
 		
-		return precio;
+		return result*super.calcular(cantidad);
 	}
 
 	@Override

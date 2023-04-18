@@ -41,7 +41,6 @@ public class NoPerecederos extends Productos {
 	
 	@Override
 	public double calcular(int cantidad) {
-		
 		return super.calcular(cantidad);
 	}
 	

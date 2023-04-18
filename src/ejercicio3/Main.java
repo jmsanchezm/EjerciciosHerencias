@@ -5,17 +5,35 @@ import java.util.Arrays;
 public class Main {
 
 	public static void main(String[] args) {
-		Productos[] producto = new Productos[3];
+		int cant = 5;
+		double sumaProductos = 0;
+		double sumaPrecio = 0;
+		double sumaPrecio2 = 0;
 
-		producto [0] = new Perecedero("Mantequilla", 1.5, 20);
-		producto [1] = new NoPerecederos("Aceite", 2.3,"Semilla");
-		producto [2] = new Perecedero ("Pan Bimbo",1,2);
-		
-		
-		
-		for (Productos valores : producto) {
-			System.out.println(valores);
+		Productos[] producto = new Productos[10];
+
+		producto[0] = new NoPerecederos("Galletas", 2.15, "Maria");
+		producto[1] = new NoPerecederos("Café", 4.5, "Mocca");
+		producto[2] = new NoPerecederos("Aceite", 5.99, "Girasol");
+		producto[3] = new NoPerecederos("Leche", 2.99, "Entera");
+		producto[4] = new NoPerecederos("Cacao", 6.99, "En Polvo");
+		producto[5] = new Perecedero("Yogur", 0.99, 1);
+		producto[6] = new Perecedero("Mantequilla", 2.99, 4);
+		producto[7] = new Perecedero("Tomate", 1.99, 2);
+		producto[8] = new Perecedero("Mermelada", 2.99, 5);
+		producto[9] = new Perecedero("Sopa", 0.95, 3);
+
+		for (int i = 0; i < producto.length; i++) {
+
+			sumaPrecio = producto[i].calcular(cant);
+			sumaProductos += sumaPrecio;
+			System.out.println(producto[i]);
+			System.out.println();
+			System.out.println("Precio total de cada producto: " + sumaPrecio);
+			System.out.println("-----------------------------");
 		}
+
+		System.out.println("La suma total de precios es de " + sumaProductos);
 	}
 
 }

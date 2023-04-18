@@ -3,7 +3,7 @@ package ejercicio3;
 public class Productos {
 
 	protected String nombre;
-	protected double precio=0;
+	protected double precio;
 
 	public Productos() {
 		super();
@@ -12,9 +12,8 @@ public class Productos {
 
 	public Productos(String nombre, double precio) {
 		this.nombre = nombre;
-		if (precio > 0) {
-			this.precio = precio;
-		}
+		this.precio = precio;
+
 	}
 
 	public String getNombre() {
@@ -35,19 +34,17 @@ public class Productos {
 
 	/**
 	 * Método que calculará el importe total de los productos
+	 * 
 	 * @param cantidad
 	 * @return
 	 */
 	public double calcular(int cantidad) {
-		double result=0;
-		result=cantidad*precio;
-		return result;
+		return cantidad * precio;
 	}
 
 	@Override
 	public String toString() {
-		return  nombre + ", " + precio ;
+		return nombre + ", " + precio;
 	}
-	
-	
+
 }
