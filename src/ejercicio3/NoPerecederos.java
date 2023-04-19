@@ -17,13 +17,14 @@ public class NoPerecederos extends Productos {
 
 	/**
 	 * Constructor con los parámetros de la clase padre
+	 * 
 	 * @param nombre
 	 * @param precio
 	 */
 	public NoPerecederos(String nombre, double precio, String tipo) {
 		super(nombre, precio);
-		this.tipo=tipo;
-		
+		this.tipo = tipo;
+
 	}
 
 	public NoPerecederos(String tipo) {
@@ -38,14 +39,14 @@ public class NoPerecederos extends Productos {
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}
-	
+
 	@Override
 	public double calcular(int cantidad) {
 		return super.calcular(cantidad);
 	}
-	
+
 	@Override
 	public String toString() {
-		return super.toString()+", " +tipo;
+		return super.toString() + ", " + tipo;
 	}
 }

@@ -17,10 +17,10 @@ public class Main {
 		producto[2] = new NoPerecederos("Aceite", 5.99, "Girasol");
 		producto[3] = new NoPerecederos("Leche", 2.99, "Entera");
 		producto[4] = new NoPerecederos("Cacao", 6.99, "En Polvo");
-		producto[5] = new Perecedero("Yogur", 0.99, 1);
-		producto[6] = new Perecedero("Mantequilla", 2.99, 4);
+		producto[5] = new Perecedero("Yogur", 0.99, 2);
+		producto[6] = new Perecedero("Mantequilla", 2.99, 1);
 		producto[7] = new Perecedero("Tomate", 1.99, 2);
-		producto[8] = new Perecedero("Mermelada", 2.99, 5);
+		producto[8] = new Perecedero("Mermelada", 2.99, 3);
 		producto[9] = new Perecedero("Sopa", 0.95, 3);
 
 		for (int i = 0; i < producto.length; i++) {
