@@ -132,5 +132,15 @@ public class Electrodoméstico {
 			precioBase+=10;
 			break;
 		}
+		
+		if (peso>=0 && peso<=19) {
+			precioBase+=10;
+		}else if (peso>=20 && peso<=49) {
+			precioBase+=50;
+		}else if (peso>=50 && peso<=79) {
+			precioBase+=80;
+		}else if (peso<=80){
+			precioBase+=100;
+		}
 	}
 }
