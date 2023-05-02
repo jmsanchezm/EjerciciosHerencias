@@ -99,6 +99,11 @@ public class Electrodoméstico {
 
 	}
 
+	/**
+	 * Método que comprueba que el color se encuentra en el enumerado Colores
+	 * @param color
+	 * @return Devuelve true en el caso de que esté en el enumerado, false en caso contrario
+	 */
 	private boolean comprobarColor(String color) {
 		boolean result = false;
 
@@ -110,8 +115,12 @@ public class Electrodoméstico {
 		return result;
 	}
 	
+	/**
+	 * Método que incrementa el precio en base al consumo y el peso
+	 */
 	public void precioFinal() {
 		
+		//Creamos un switch en función del valor del consumo
 		switch (consumo) {
 		case A: 
 			precioBase+=100;
@@ -132,14 +141,21 @@ public class Electrodoméstico {
 			precioBase+=10;
 			break;
 		}
-		
+		// Si el precio se encuentra en el intervalo, 
 		if (peso>=0 && peso<=19) {
+			//Se sumará al precio 10
 			precioBase+=10;
+		//Si está entre 20 y 49
 		}else if (peso>=20 && peso<=49) {
+			//Se sumará al precio 50
 			precioBase+=50;
+		//Si el peso es mayor a 50 y menor a 79
 		}else if (peso>=50 && peso<=79) {
+			//Se sumará al precio 80
 			precioBase+=80;
+		//Si el peso es mayor a 80
 		}else if (peso<=80){
+			//Se sumará 100
 			precioBase+=100;
 		}
 	}
