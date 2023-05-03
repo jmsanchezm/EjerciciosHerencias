@@ -54,6 +54,10 @@ public class Electrodoméstico {
 		this.peso = peso;
 	}
 
+	public Electrodoméstico(double precioBase2, double peso2, Colores color2, ConsEnerg consumo2) {
+		// TODO Auto-generated constructor stub
+	}
+
 	/**
 	 * @return the precioBase
 	 */

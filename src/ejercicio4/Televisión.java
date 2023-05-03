@@ -63,8 +63,8 @@ public class Televisión extends Electrodoméstico {
 	 * @param resolucion
 	 * @param tdt
 	 */
-	public Televisión(double precioBase, double peso, String color, char consumo, double resolucion, boolean tdt) {
-		super(precioBase, peso, color, consumo);
+	public Televisión(double precioBase, double peso, double resolucion, boolean tdt) {
+		super(precioBase, peso);
 		if (resolucion >= 0) {
 			this.resolucion = resolucion;
 		}
@@ -72,4 +72,5 @@ public class Televisión extends Electrodoméstico {
 
 	}
 
+	
 }
