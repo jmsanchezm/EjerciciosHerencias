@@ -95,7 +95,9 @@ public class Triangulo extends Poligono {
 	 */
 	@Override
 	public double area() {
-		return (lado1 + lado2 + lado3) / 2;
+		double result=(lado1 + lado2 + lado3) / 2;
+		result=((result-lado1)*(result-lado2)*(result-lado3));
+		return Math.sqrt(result*result);
 	}
 
 	/**
